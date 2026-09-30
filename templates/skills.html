@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        {% load static %}
+        
+        <title>Навыки</title>
+        
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+        <link href="{% static 'css/table.css'%}" rel="stylesheet">
+        <link href="{% static 'css/skills.css'%}" rel="stylesheet">
+        <link rel="icon" href="{% static 'img/icon.ico' %}" type="image/x-icon">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="site-navigation">
+                <ul class="site-navigation-list">
+                    <li class="site-navigation-list-item"><a href="/demand">Востребованность</a></li>
+                    <li class="site-navigation-list-item"><a href="/geography">География</a></li>
+                    <li class="site-navigation-list-item active"><a href="/skills">Навыки</a></li>
+                    <li class="site-navigation-list-item"><a href="/vacancies">Последние вакансии</a></li>
+                </ul>
+                <a href="/"><img class="main-logo" src="{% static 'img/header_logo.svg'%}" width="172" height="35" alt="Логотип Testin"></a>
+            </nav>
+        </header>
+        <main>
+            <h1>Наиболее высокочастотные навыки</h1>
+            <img class="hero-graph" src="{% static 'img/skills.png'%}" height="400" alt="График наиболее высокочастотных навыков">
+            <div class="heading">
+                <h2>ТОП-10 навыков по годам для профессии "{{ profession.title }}"</h2>
+                <div class="buttons">
+                    <img class="button diagram" src="{% static 'img/diagram_button.svg'%}" height="50" alt="Переключить на круговые диаграммы">
+                    <img class="button histogram" src="{% static 'img/histogram_button.svg'%}"height="50" alt="Переключить на гистограммы">
+                </div>
+            </div>
+            <div class="graphics">
+            </div>
+            <table class="skills-table">
+                <tr><th></th><th>2015</th><th>2016</th><th>2017</th><th>2018</th><th>2019</th><th>2020</th><th>2021</th><th>2022</th></tr>
+                {% for position in skills %}
+                    <tr><td>{{ forloop.counter }}</td>
+                    {% for i in position %}
+                        <td>{{ i }}</td>
+                    {% endfor %}
+                    </tr>
+                {% endfor %}
+            </table>
+        </main>
+        <footer class="main-footer">
+            <img class="footer-logo" src="{% static 'img/footer_logo.svg'%}" width="144" height="28" alt="Логотип Testin">
+            <div class="author">
+                <p>© Трефелова Алина Николаевна</p>
+                <p>РИ-210944</p>
+            </div>
+            <a class="git" href="https://github.com/malinainsugar/Trefelova"><img  src="{% static 'img/git.svg'%}" width="43" height="43" alt="github"></a>
+            <ul class="footer-navigation-list">
+                <li class="footer-navigation-list-item"><a href="/demand">Востребованность</a></li>
+                <li class="footer-navigation-list-item"><a href="/geography">География</a></li>
+                <li class="footer-navigation-list-item"><a href="/skills">Навыки</a></li>
+                <li class="footer-navigation-list-item"><a href="/vacancies">Последние вакансии</a></li>
+            </ul>
+        </footer>
+        <script src="{% static 'js/main.js' %}"></script>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        {% load static %}
+        
+        <title>География</title>
+
+        <link href="{% static 'css/style.css'%}" rel="stylesheet">
+        <link href="{% static 'css/table.css'%}" rel="stylesheet">
+        <link href="{% static 'css/geography.css'%}" rel="stylesheet">
+        <link rel="icon" href="{% static 'img/icon.ico' %}" type="image/x-icon">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="site-navigation">
+                <ul class="site-navigation-list">
+                    <li class="site-navigation-list-item"><a href="/demand">Востребованность</a></li>
+                    <li class="site-navigation-list-item active"><a href="/geography">География</a></li>
+                    <li class="site-navigation-list-item"><a href="/skills">Навыки</a></li>
+                    <li class="site-navigation-list-item"><a href="/vacancies">Последние вакансии</a></li>
+                </ul>
+                <a href="/"><img class="main-logo" src="{% static 'img/header_logo.svg'%}" width="172" height="35" alt="Логотип Testin"></a>
+            </nav>
+        </header>
+        <main>
+            <div class="first">
+                <img src="{% static 'img/salaryCity.png'%}" height="350" alt="График уровня зарплат по городам">
+                <table class="salary-city-table">
+                    <tr><th>Город</th><th>Уровень зарплат</th></tr>
+                    {% for city in salaryCities %}
+                        <tr><td>{{ city.city }}</td><td>{{ city.salary }}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div>
+                <table class="vacancies-city-table">
+                    <tr><th>Город</th><th>Доля вакансий</th></tr>
+                    {% for city in vacanciesCities %}
+                        <tr><td>{{ city.city }}</td><td>{{ city.vacancies }}%</td></tr>
+                    {% endfor %}
+                </table>
+                <img src="{% static 'img/vacanciesCity.png'%}" height="350" alt="График доли вакансий по городам">
+            </div>
+        </main>
+        <footer class="main-footer">
+            <img class="footer-logo" src="{% static 'img/footer_logo.svg'%}" width="144" height="28" alt="Логотип Testin">
+            <div class="author">
+                <p>© Трефелова Алина Николаевна</p>
+                <p>РИ-210944</p>
+            </div>
+            <a class="git" href="https://github.com/malinainsugar/Trefelova"><img  src="{% static 'img/git.svg'%}" width="43" height="43" alt="github"></a>
+            <ul class="footer-navigation-list">
+                <li class="footer-navigation-list-item"><a href="/demand">Востребованность</a></li>
+                <li class="footer-navigation-list-item"><a href="/geography">География</a></li>
+                <li class="footer-navigation-list-item"><a href="/skills">Навыки</a></li>
+                <li class="footer-navigation-list-item"><a href="/vacancies">Последние вакансии</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

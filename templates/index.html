@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        {% load static %}
+        
+        <title>{{ profession_title }}</title>
+        
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/hero.css' %}" rel="stylesheet">
+        <link rel="icon" href="{% static 'img/icon.ico' %}" type="image/x-icon">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="main-header">
+            <nav class="site-navigation">
+                <ul class="site-navigation-list">
+                    <li class="site-navigation-list-item"><a href="/demand">Востребованность</a></li>
+                    <li class="site-navigation-list-item"><a href="/geography">География</a></li>
+                    <li class="site-navigation-list-item"><a href="/skills">Навыки</a></li>
+                    <li class="site-navigation-list-item"><a href="/vacancies">Последние вакансии</a></li>
+                </ul>
+                <a href="#"><img class="main-logo" src="{% static 'img/header_logo.svg' %}" width="172" height="35" alt="Логотип Testin"></a>
+            </nav>
+        </header>
+        <main>
+            {% autoescape off %}
+            <section class="hero">
+                <h1>{{ profession_title }}</h1>
+                {{ profession_description.hero }}
+            </section>
+            <section class="tasks">
+                <img src="{% static 'img/Software code testing-pana.svg' %}" height="400">
+                <div class="text">
+                    <h2>Задачи и обязанности тестировщика</h2>
+                    {{ profession_description.tasks }}
+                </div>
+            </section>
+            <section class="perspective">
+                <div class="text">
+                    <h2>Перспективы профессии</h2>
+                    {{ profession_description.perspective }}
+                </div>
+                <img src="{% static 'img/Milestones of business projects-pana.svg' %}" height="400">
+            </section>
+            <section class="required-skills">
+                <img src="{% static 'img/404 Error-pana.svg' %}" height="400">
+                <div class="text">
+                    <h2>Необходимые навыки</h2>
+                    {{ profession_description.hardSkills }}
+                    <div class="line"></div>
+                    {{ profession_description.softSkills }}
+                </div>
+            </section>
+            {% endautoescape %}
+        </main>
+        <footer class="main-footer">
+            <img class="footer-logo" src="{% static 'img/footer_logo.svg' %}" width="144" height="28" alt="Логотип Testin">
+            <div class="author">
+                <p>© Трефелова Алина Николаевна</p>
+                <p>РИ-210944</p>
+            </div>
+            <a class="git" href="https://github.com/malinainsugar/Trefelova"><img  src="{% static 'img/git.svg' %}" width="43" height="43" alt="github"></a>
+            <ul class="footer-navigation-list">
+                <li class="footer-navigation-list-item"><a href="/demand">Востребованность</a></li>
+                <li class="footer-navigation-list-item"><a href="/geography">География</a></li>
+                <li class="footer-navigation-list-item"><a href="/skills">Навыки</a></li>
+                <li class="footer-navigation-list-item"><a href="/vacancies">Последние вакансии</a></li>
+            </ul>
+        </footer>
+    </body>
+</html>

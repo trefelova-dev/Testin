@@ -1,0 +1,46 @@
+h1 {
+    text-transform: uppercase;
+    text-align: center;
+    color: #00FF85;
+    margin-bottom: 50px;
+}
+
+.hero-graph {
+    display: block;
+    margin: 0 auto;
+}
+
+h2 {
+    text-transform: uppercase;
+    margin: 40px 0;
+    color: #00FF85;
+}
+
+.graphics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    margin: 20px auto 50px auto;
+}
+
+.skills-table {
+    margin: 0 auto;
+}
+
+.heading {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons {
+    margin: auto 0;
+}
+
+.button:hover {
+    opacity: 0.5;
+}
+
+.button:active {
+    opacity: 0.3;
+}
