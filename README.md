@@ -66,7 +66,7 @@ python manage.py runserver
 ```
 
 Готово! Откройте браузер и перейдите по адресу:  
-👉 **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
+**[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
 
 ---
 
@@ -131,5 +131,5 @@ Start the Django development server:
 python manage.py runserver
 ```
 
-🎉 Open your browser and navigate to:  
-👉 **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
+Open your browser and navigate to:  
+**[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
