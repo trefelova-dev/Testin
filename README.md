@@ -1,53 +1,135 @@
+# 📊 Testin — Django Analytics Web App
 
-## Тестирование:
+[🇷🇺 Инструкция на русском](#инструкция-по-запуску) | [🇬🇧 Instructions in English](#getting-started)
 
-- Отчёт о тестировании на doctest
+---
 
-![](analysis/Screenshots/doctest.PNG)
+## 🇷🇺 Инструкция по запуску
 
-- Отчёт о тестировании на unittest
+### Предварительные требования
+Перед началом убедитесь, что на вашем компьютере установлен:
+* **Python 3.10+** (не забудьте поставить галочку *«Add Python to PATH»* при установке на Windows).
+* **Git**
 
-![](analysis/Screenshots/unittest.PNG)
+---
 
-## Профилирование:
-### Без многопроцессорной обработки
+### Пошаговый запуск
 
-- При печати вакансий
+#### 1. Клонирование репозитория
+Откройте терминал и перейдите в нужную папку:
+```bash
+git clone https://github.com/trefelova-dev/Testin.git
+cd testin
+```
 
-![](analysis/Screenshots/vacanciesProfile.PNG)
+#### 2. Создание и активация виртуального окружения
+Создайте изолированное окружение:
+```bash
+python -m venv venv
+```
 
-- При генерации отчёта
-(Здесь профилирование было с файлом vacancies_medium)
+Активируйте его:
 
-![](analysis/Screenshots/statisticsProfile.PNG)
+##### Windows (PowerShell)
+```powershell
+.\venv\Scripts\Activate.ps1
+```
 
-- При форматировании даты: 
+##### Windows (Git Bash / Command Prompt)
+```bash
+source venv/Scripts/activate
+```
 
-Функция formatterDataDatetime
+##### macOS / Linux
+```bash
+source venv/bin/activate
+```
 
-![](analysis/Screenshots/datetimeProfile.PNG)
+#### 3. Установка зависимостей
+Обновите менеджер пакетов и установите необходимые библиотеки:
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+*(Если `requirements.txt` отсутствует, установите базовые пакеты: `pip install django requests prettytable`)*.
 
-Функция formatterDataStr
+#### 4. Подготовка базы данных
+Примените миграции для инициализации SQLite базы данных:
+```bash
+python manage.py migrate
+```
 
-![](analysis/Screenshots/strProfile.PNG)
+#### 5. Запуск сервера разработки
+Запустите локальный веб-сервер Django:
+```bash
+python manage.py runserver
+```
 
-Функция formatterDataRe (переименована)
+Готово! Откройте браузер и перейдите по адресу:  
+👉 **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
 
-![](analysis/Screenshots/reProfile.PNG)
+---
 
-### Concurrent futures
+## 🇬🇧 Getting Started
 
-![](analysis/Screenshots/multiProfile.PNG)
+### Prerequisites
+Before running the application, ensure you have:
+* **Python 3.10+** installed (check *“Add Python to PATH”* during installation on Windows).
+* **Git**
 
-## Разделённые csv-файлы:
+---
 
-![](analysis/Screenshots/separateFiles.PNG)
+### Installation & Setup
 
-## БД с курсами валют
+#### 1. Clone the repository
+Open your terminal and clone the project:
+```bash
+git clone https://github.com/trefelova-dev/Testin.git
+cd testin
+```
 
-![](analysis/Screenshots/currencies.PNG)
+#### 2. Create and activate a virtual environment
+Create a virtual environment:
+```bash
+python -m venv venv
+```
 
-## БД с вакансиями
+Activate it:
 
-![](analysis/Screenshots/db.PNG)
+##### Windows (PowerShell)
+```powershell
+.\venv\Scripts\Activate.ps1
+```
 
+##### Windows (Git Bash / Command Prompt)
+```bash
+source venv/Scripts/activate
+```
+
+##### macOS / Linux
+```bash
+source venv/bin/activate
+```
+
+#### 3. Install dependencies
+Upgrade pip and install all required packages:
+```bash
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+*(If `requirements.txt` is missing, run: `pip install django requests prettytable`)*.
+
+#### 4. Apply migrations
+Run migrations to set up the local SQLite database:
+```bash
+python manage.py migrate
+```
+
+#### 5. Run the development server
+Start the Django development server:
+```bash
+python manage.py runserver
+```
+
+🎉 Open your browser and navigate to:  
+👉 **[http://127.0.0.1:8000/](http://127.0.0.1:8000/)**
