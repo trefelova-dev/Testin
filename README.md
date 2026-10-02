@@ -1,6 +1,6 @@
 # 📊 Testin — Django Analytics Web App
 
-[🇷🇺 Инструкция на русском](#инструкция-по-запуску) | [🇬🇧 Instructions in English](#getting-started)
+[🇷🇺 Инструкция на русском](#-инструкция-по-запуску) | [🇬🇧 Instructions in English](#-getting-started)
 
 ---
 
