@@ -1,21 +1,46 @@
 main {
-    padding: 0 100px;
-}
-
-div:not(.author) {
-    display: flex;
-    gap: 100px;
-    justify-content: center;
+    padding: 0 40px;
+    max-width: 1440px;
+    margin: 0 auto;
+    margin-bottom: 80px;
 }
 
 .first {
-    margin-bottom: 50px;
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: 56px;
+}
+
+main > div:not(.first):not(.author) {
+    display: flex;
+    gap: 48px;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.first > *,
+main > div:not(.first):not(.author) > * {
+    flex: 1;
+    max-width: 620px;
+    width: 100%;
 }
 
 table {
-    width: 600px;
+    width: 100%;
 }
 
-tt, td {
-    padding: 5px;
+main img {
+    display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+    max-height: 480px;
+    object-fit: contain;
+    border-radius: 8px;
+    border: 1px solid #27313f;
+    background-color: #161c24;
+    padding: 16px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
 }

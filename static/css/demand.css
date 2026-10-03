@@ -1,21 +1,39 @@
 main {
     display: flex;
-    gap: 100px;
-    padding: 0 200px;
-}
-
-img {
-    display: block;
+    gap: 48px;
+    padding: 0 40px;
+    max-width: 1440px;
+    margin: 0 auto 80px auto;
+    align-items: flex-start;
 }
 
 .graphics {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 24px;
+    flex: 0 0 520px;
+    max-width: 520px;
+}
+
+.graphics img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #27313f;
+    background-color: #161c24;
+    padding: 14px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    flex: 1;
+    width: 100%;
 }
 
 th {
     position: sticky;
     top: 0;
-    background-color: #00FF85;
+    background-color: #1c2430;
+    color: #34d399;
 }
